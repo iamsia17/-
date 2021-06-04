@@ -9,3 +9,13 @@ C:\Users\Анастасия\Desktop\игра\Между жизнью и смер
 C:\Users\Анастасия\Desktop\игра\Между жизнью и смертью\obj\Debug\Между жизнью и смертью.exe
 C:\Users\Анастасия\Desktop\игра\Между жизнью и смертью\obj\Debug\Между жизнью и смертью.pdb
 C:\Users\Анастасия\Desktop\игра\Между жизнью и смертью\obj\Debug\Между_жизнью_и_смертью.Form2.resources
+C:\Users\Анна\Documents\GitHub\-\игра\Между жизнью и смертью\bin\Debug\Между жизнью и смертью.exe.config
+C:\Users\Анна\Documents\GitHub\-\игра\Между жизнью и смертью\bin\Debug\Между жизнью и смертью.exe
+C:\Users\Анна\Documents\GitHub\-\игра\Между жизнью и смертью\bin\Debug\Между жизнью и смертью.pdb
+C:\Users\Анна\Documents\GitHub\-\игра\Между жизнью и смертью\obj\Debug\Между жизнью и смертью.csprojAssemblyReference.cache
+C:\Users\Анна\Documents\GitHub\-\игра\Между жизнью и смертью\obj\Debug\Между_жизнью_и_смертью.Form1.resources
+C:\Users\Анна\Documents\GitHub\-\игра\Между жизнью и смертью\obj\Debug\Между_жизнью_и_смертью.Form2.resources
+C:\Users\Анна\Documents\GitHub\-\игра\Между жизнью и смертью\obj\Debug\Между_жизнью_и_смертью.Properties.Resources.resources
+C:\Users\Анна\Documents\GitHub\-\игра\Между жизнью и смертью\obj\Debug\Между жизнью и смертью.csproj.GenerateResource.cache
+C:\Users\Анна\Documents\GitHub\-\игра\Между жизнью и смертью\obj\Debug\Между жизнью и смертью.exe
+C:\Users\Анна\Documents\GitHub\-\игра\Между жизнью и смертью\obj\Debug\Между жизнью и смертью.pdb
