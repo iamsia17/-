@@ -11,10 +11,10 @@ using System.Threading;
 
 namespace Между_жизнью_и_смертью
 {
-    public partial class Form1 : Form
+    public partial class menu : Form
     {
         Thread th;
-        public Form1()
+        public menu()
         {
             InitializeComponent();
         }
@@ -28,7 +28,7 @@ namespace Между_жизнью_и_смертью
         }
         public void open(object obj)
         {
-            Application.Run(new Form2());
+            Application.Run(new game());
         }
     }
 }

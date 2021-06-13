@@ -5,13 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Между_жизнью_и_смертью
 {
-    public partial class Form2 : Form
+    public partial class game : Form
     {
+        Thread th;
         bool up, down, right, left, game_over;
         int score, student_speed, teacher1_speedx, teacher1_speedy, teacher2_speedx, teacher2_speedy, teacher3_speedx, teacher3_speedy, count;
 
@@ -67,16 +69,7 @@ namespace Между_жизнью_и_смертью
                         if (student.Bounds.IntersectsWith(x.Bounds))
                         {
                             count += 1;
-                            if (left == true)
-                                left = false;
-                            if (right == true)
-                                right = false;
-                            if (up == true)
-                                up = false;
-                            if (down == true)
-                                down = false;
-                            student.Left = 246;
-                            student.Top = 350;
+                            DontMove();
                             if (count == 1)
                             {
                                 heart1.Visible = false;
@@ -93,7 +86,7 @@ namespace Между_жизнью_и_смертью
                             {
                                 heart3.Visible = false;
                                 heart6.Visible = true;
-                                MessageBox.Show("ВЫ ОТЧИСЛЕНЫ!", "Внимание");
+                                MessageBox.Show("ВЫ ОТЧИСЛЕНЫ!", "Конец игры");
                                 gameover();
                             }
                         }
@@ -102,10 +95,42 @@ namespace Между_жизнью_и_смертью
             }
             if (score == 61)
             {
-                //code
+                score += 1;
+                DontMove();
+                DialogResult res = MessageBox.Show("Поздравляем! Вы получили ТРОЙКУ автоматом! Хотите продолжить?)", "Внимание!", MessageBoxButtons.YesNo);
+                if (res == DialogResult.No)
+                    gameover();              
+            }
+            if (score == 76)
+            {
+                score += 1;
+                DontMove();
+                DialogResult res = MessageBox.Show("Поздравляем! Вы получили ЧЕТВЕРКУ автоматом! Хотите продолжить?)", "Внимание!", MessageBoxButtons.YesNo);
+                if (res == DialogResult.No)
+                    gameover();
+            }
+            if (score == 91)
+            {
+                score += 1;
+                student.Left = 246;
+                student.Top = 360;
+                MessageBox.Show("Поздравляем! Вы получили ПЯТЕРКУ автоматом! До новых встреч!)", "Конец игры");
+                gameover();
             }
         }
-
+        public void DontMove()
+        {
+            if (left == true)
+                left = false;
+            if (right == true)
+                right = false;
+            if (up == true)
+                up = false;
+            if (down == true)
+                down = false;
+            student.Left = 246;
+            student.Top = 360;
+        }
         private void Form2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
@@ -137,15 +162,10 @@ namespace Между_жизнью_и_смертью
         }
 
         
-        public Form2()
+        public game()
         {
             InitializeComponent();
             resetgame();
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void pictureBox38_Click(object sender, EventArgs e)
@@ -173,7 +193,7 @@ namespace Между_жизнью_и_смертью
             game_over = false;
 
             student.Left = 246;
-            student.Top = 350;
+            student.Top = 360;
             teacher1.Left = 950;
             teacher1.Top = 300;
             teacher2.Left = 302;
@@ -183,12 +203,18 @@ namespace Между_жизнью_и_смертью
 
             timer1.Start();
         }
-
         private void gameover()
         {
             game_over = true;
             timer1.Stop();
-            this.Close();
+            this.Close(); 
+            th = new Thread(open);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
+        }
+        public void open(object obj)
+        {
+            Application.Run(new menu());
         }
     }
 }
