@@ -83,7 +83,7 @@
             this.heart6 = new System.Windows.Forms.PictureBox();
             this.heart5 = new System.Windows.Forms.PictureBox();
             this.heart4 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.started = new System.Windows.Forms.Timer(this.components);
             this.pictureBox43 = new System.Windows.Forms.PictureBox();
             this.pictureBox44 = new System.Windows.Forms.PictureBox();
             this.pictureBox45 = new System.Windows.Forms.PictureBox();
@@ -224,6 +224,10 @@
             this.pictureBox175 = new System.Windows.Forms.PictureBox();
             this.pictureBox177 = new System.Windows.Forms.PictureBox();
             this.pictureBox176 = new System.Windows.Forms.PictureBox();
+            this.pictureBox178 = new System.Windows.Forms.PictureBox();
+            this.pictureBox179 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.walls4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -416,6 +420,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox175)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox177)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox176)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox178)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox179)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -789,7 +795,6 @@
             this.pictureBox36.TabIndex = 55;
             this.pictureBox36.TabStop = false;
             this.pictureBox36.Tag = "wall";
-            this.pictureBox36.Click += new System.EventHandler(this.pictureBox36_Click);
             // 
             // pictureBox37
             // 
@@ -811,7 +816,6 @@
             this.pictureBox38.TabIndex = 57;
             this.pictureBox38.TabStop = false;
             this.pictureBox38.Tag = "wall";
-            this.pictureBox38.Click += new System.EventHandler(this.pictureBox38_Click);
             // 
             // pictureBox39
             // 
@@ -968,10 +972,10 @@
             this.heart4.TabIndex = 70;
             this.heart4.TabStop = false;
             // 
-            // timer1
+            // started
             // 
-            this.timer1.Interval = 20;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.started.Interval = 20;
+            this.started.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pictureBox43
             // 
@@ -2474,12 +2478,56 @@
             this.pictureBox176.TabStop = false;
             this.pictureBox176.Tag = "wall";
             // 
+            // pictureBox178
+            // 
+            this.pictureBox178.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox178.Location = new System.Drawing.Point(483, 528);
+            this.pictureBox178.Name = "pictureBox178";
+            this.pictureBox178.Size = new System.Drawing.Size(142, 25);
+            this.pictureBox178.TabIndex = 213;
+            this.pictureBox178.TabStop = false;
+            this.pictureBox178.Tag = "doorA";
+            // 
+            // pictureBox179
+            // 
+            this.pictureBox179.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox179.Location = new System.Drawing.Point(474, 410);
+            this.pictureBox179.Name = "pictureBox179";
+            this.pictureBox179.Size = new System.Drawing.Size(93, 25);
+            this.pictureBox179.TabIndex = 214;
+            this.pictureBox179.TabStop = false;
+            this.pictureBox179.Tag = "doorB";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(104, 693);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(125, 36);
+            this.label1.TabIndex = 215;
+            this.label1.Text = "Class A";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(84, 314);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(124, 36);
+            this.label2.TabIndex = 216;
+            this.label2.Text = "Class B";
+            // 
             // game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox179);
+            this.Controls.Add(this.pictureBox178);
             this.Controls.Add(this.pictureBox176);
             this.Controls.Add(this.pictureBox177);
             this.Controls.Add(this.pictureBox175);
@@ -2869,6 +2917,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox175)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox177)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox176)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox178)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox179)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2929,7 +2979,7 @@
         private System.Windows.Forms.PictureBox heart6;
         private System.Windows.Forms.PictureBox heart5;
         private System.Windows.Forms.PictureBox heart4;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer started;
         private System.Windows.Forms.PictureBox pictureBox43;
         private System.Windows.Forms.PictureBox pictureBox44;
         private System.Windows.Forms.PictureBox pictureBox45;
@@ -3070,5 +3120,9 @@
         private System.Windows.Forms.PictureBox pictureBox175;
         private System.Windows.Forms.PictureBox pictureBox177;
         private System.Windows.Forms.PictureBox pictureBox176;
+        private System.Windows.Forms.PictureBox pictureBox178;
+        private System.Windows.Forms.PictureBox pictureBox179;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

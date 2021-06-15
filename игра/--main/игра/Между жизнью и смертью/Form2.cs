@@ -17,11 +17,6 @@ namespace Между_жизнью_и_смертью
         bool up, down, right, left, game_over;
         int score, student_speed, teacher1_speedx, teacher1_speedy, teacher2_speedx, teacher3_speedx, count;
 
-        private void pictureBox36_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             Score1.Text = "Score:" + score;
@@ -92,8 +87,26 @@ namespace Между_жизнью_и_смертью
                                 heart3.Visible = false;
                                 heart6.Visible = true;
                                 MessageBox.Show("ВЫ ОТЧИСЛЕНЫ!", "Конец игры");
-                                gameover();
+                                Gameover();
                             }
+                        }
+                    }
+
+                    if ((string)x.Tag == "doorA" && x.Visible == true)
+                    {
+                        if (student.Bounds.IntersectsWith(x.Bounds))
+                        {
+                            x.Visible = false;
+                            teacher2.Visible = true;
+                        }
+                    }
+
+                    if ((string)x.Tag == "doorB" && x.Visible == true)
+                    {
+                        if (student.Bounds.IntersectsWith(x.Bounds))
+                        {
+                            x.Visible = false;
+                            teacher3.Visible = true;
                         }
                     }
                 }
@@ -104,7 +117,7 @@ namespace Между_жизнью_и_смертью
                 DontMove();
                 DialogResult res = MessageBox.Show("Поздравляем! Вы получили ТРОЙКУ автоматом! Хотите продолжить?)", "Внимание!", MessageBoxButtons.YesNo);
                 if (res == DialogResult.No)
-                    gameover();              
+                    Gameover();              
             }
             if (score == 76)
             {
@@ -112,7 +125,7 @@ namespace Между_жизнью_и_смертью
                 DontMove();
                 DialogResult res = MessageBox.Show("Поздравляем! Вы получили ЧЕТВЕРКУ автоматом! Хотите продолжить?)", "Внимание!", MessageBoxButtons.YesNo);
                 if (res == DialogResult.No)
-                    gameover();
+                    Gameover();
             }
             if (score == 91)
             {
@@ -120,7 +133,7 @@ namespace Между_жизнью_и_смертью
                 student.Left = 246;
                 student.Top = 360;
                 MessageBox.Show("Поздравляем! Вы получили ПЯТЕРКУ автоматом! До новых встреч!)", "Конец игры");
-                gameover();
+                Gameover();
             }
 
 
@@ -176,56 +189,58 @@ namespace Между_жизнью_и_смертью
                 down = false;
         }
 
-        
         public game()
         {
             InitializeComponent();
-            resetgame();
+            Resetgame();
         }
 
-        private void pictureBox38_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void resetgame()
+        private void Resetgame()
         {
             count = 0;
+
             heart1.Visible = true;
             heart2.Visible = true;
             heart3.Visible = true;
             heart4.Visible = false;
             heart5.Visible = false;
             heart6.Visible = false;
+
+            teacher2.Visible = false;
+            teacher3.Visible = false;
+
             Score1.Text = "Score: 0";
             score = 0;
+
             teacher1_speedx = 5;
             teacher1_speedy = 5;
             teacher2_speedx = 5;
             teacher3_speedx = 5;
             student_speed = 6;
+
             game_over = false;
 
             student.Left = 246;
             student.Top = 360;
             teacher1.Left = 950;
-            teacher1.Top = 300;
+            teacher1.Top = 290;
             teacher2.Left = 302;
             teacher2.Top = 580;
             teacher3.Left = 600;
             teacher3.Top = 195;
 
-            timer1.Start();
+            started.Start();
         }
-        private void gameover()
+        private void Gameover()
         {
             game_over = true;
-            timer1.Stop();
-            this.Close(); 
-            th = new Thread(open);
+            started.Stop();
+            Close(); 
+            th = new Thread(Open);
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
-        public void open(object obj)
+        public void Open(object obj)
         {
             Application.Run(new menu());
         }

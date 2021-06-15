@@ -30,3 +30,13 @@ C:\Users\Анастасия\Downloads\--main\--main\игра\Между жизн
 C:\Users\Анастасия\Downloads\--main\--main\игра\Между жизнью и смертью\obj\Debug\Между жизнью и смертью.csproj.CoreCompileInputs.cache
 C:\Users\Анастасия\Downloads\--main\--main\игра\Между жизнью и смертью\obj\Debug\Между жизнью и смертью.exe
 C:\Users\Анастасия\Downloads\--main\--main\игра\Между жизнью и смертью\obj\Debug\Между жизнью и смертью.pdb
+C:\Users\Анна\Documents\GitHub\-\игра\--main\игра\Между жизнью и смертью\bin\Debug\Между жизнью и смертью.exe.config
+C:\Users\Анна\Documents\GitHub\-\игра\--main\игра\Между жизнью и смертью\bin\Debug\Между жизнью и смертью.exe
+C:\Users\Анна\Documents\GitHub\-\игра\--main\игра\Между жизнью и смертью\bin\Debug\Между жизнью и смертью.pdb
+C:\Users\Анна\Documents\GitHub\-\игра\--main\игра\Между жизнью и смертью\obj\Debug\Между жизнью и смертью.csprojAssemblyReference.cache
+C:\Users\Анна\Documents\GitHub\-\игра\--main\игра\Между жизнью и смертью\obj\Debug\Между_жизнью_и_смертью.menu.resources
+C:\Users\Анна\Documents\GitHub\-\игра\--main\игра\Между жизнью и смертью\obj\Debug\Между_жизнью_и_смертью.game.resources
+C:\Users\Анна\Documents\GitHub\-\игра\--main\игра\Между жизнью и смертью\obj\Debug\Между_жизнью_и_смертью.Properties.Resources.resources
+C:\Users\Анна\Documents\GitHub\-\игра\--main\игра\Между жизнью и смертью\obj\Debug\Между жизнью и смертью.csproj.GenerateResource.cache
+C:\Users\Анна\Documents\GitHub\-\игра\--main\игра\Между жизнью и смертью\obj\Debug\Между жизнью и смертью.exe
+C:\Users\Анна\Documents\GitHub\-\игра\--main\игра\Между жизнью и смертью\obj\Debug\Между жизнью и смертью.pdb
