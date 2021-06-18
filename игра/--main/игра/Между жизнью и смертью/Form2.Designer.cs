@@ -2176,7 +2176,7 @@
             // 
             // pictureBox178
             // 
-            this.pictureBox178.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox178.BackColor = System.Drawing.Color.SaddleBrown;
             this.pictureBox178.Location = new System.Drawing.Point(483, 528);
             this.pictureBox178.Name = "pictureBox178";
             this.pictureBox178.Size = new System.Drawing.Size(142, 25);
@@ -2186,7 +2186,7 @@
             // 
             // pictureBox179
             // 
-            this.pictureBox179.BackColor = System.Drawing.Color.DarkGray;
+            this.pictureBox179.BackColor = System.Drawing.Color.SaddleBrown;
             this.pictureBox179.Location = new System.Drawing.Point(474, 410);
             this.pictureBox179.Name = "pictureBox179";
             this.pictureBox179.Size = new System.Drawing.Size(93, 25);
@@ -2236,7 +2236,7 @@
             // 
             // doorC
             // 
-            this.doorC.BackColor = System.Drawing.Color.DarkGray;
+            this.doorC.BackColor = System.Drawing.Color.SaddleBrown;
             this.doorC.Location = new System.Drawing.Point(960, 441);
             this.doorC.Name = "doorC";
             this.doorC.Size = new System.Drawing.Size(26, 83);

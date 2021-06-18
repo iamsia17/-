@@ -36,7 +36,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(355, 385);
+            this.button1.Location = new System.Drawing.Point(332, 433);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(388, 140);
             this.button1.TabIndex = 1;
@@ -50,7 +50,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(40, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(939, 264);
+            this.label1.Size = new System.Drawing.Size(983, 336);
             this.label1.TabIndex = 2;
             this.label1.Text = resources.GetString("label1.Text");
             // 
