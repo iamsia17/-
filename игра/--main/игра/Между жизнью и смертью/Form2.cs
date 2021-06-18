@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Между_жизнью_и_смертью
@@ -15,7 +8,7 @@ namespace Между_жизнью_и_смертью
     {
         Thread th;
         bool up, down, right, left, game_over;
-        int score, student_speed, teacher1_speedx, teacher1_speedy, teacher2_speedx, teacher3_speedx, count;
+        int score, student_speed, teacher1_speedx, teacher2_speedx, teacher3_speedx, count;
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -63,6 +56,7 @@ namespace Между_жизнью_и_смертью
                             student.Top += 10;
                         if (student.Bounds.IntersectsWith(x.Bounds) && down == true)
                             student.Top -= 10;
+                            
                     }
                     if ((string)x.Tag == "teacher")
                     {
@@ -109,44 +103,63 @@ namespace Между_жизнью_и_смертью
                             teacher3.Visible = true;
                         }
                     }
+
+                    if ((string)x.Tag == "doorC" && x.Visible == true)
+                    {
+                        if (student.Bounds.IntersectsWith(x.Bounds))
+                        {
+                            x.Visible = false;
+                            teacher1.Visible = true;
+                        }
+                    }
                 }
             }
-            if (score == 61)
+            if (score==61)
             {
-                score += 1;
                 DontMove();
-                DialogResult res = MessageBox.Show("Поздравляем! Вы получили ТРОЙКУ автоматом! Хотите продолжить?)", "Внимание!", MessageBoxButtons.YesNo);
-                if (res == DialogResult.No)
-                    Gameover();              
+                DialogResult message1 = MessageBox.Show("Поздравляем! Вы получили ТРОЙКУ автоматом. \nЕсли продолжите - получите +5 баллов! \nХотите продолжить?)", "Внимание!", MessageBoxButtons.YesNo);
+                if (message1 == DialogResult.No)                
+                    Gameover();
+                if (message1 == DialogResult.Yes)
+                {
+                    score += 5;
+                    started.Start();
+                }
+                   
             }
             if (score == 76)
             {
-                score += 1;
                 DontMove();
-                DialogResult res = MessageBox.Show("Поздравляем! Вы получили ЧЕТВЕРКУ автоматом! Хотите продолжить?)", "Внимание!", MessageBoxButtons.YesNo);
-                if (res == DialogResult.No)
+                DialogResult message2 = MessageBox.Show("Поздравляем! Вы получили ЧЕТВЕРКУ автоматом. \nЕсли продолжите - получите +5 баллов! \nХотите продолжить?)", "Внимание!", MessageBoxButtons.YesNo);
+                if (message2 == DialogResult.No)
                     Gameover();
+                if (message2 == DialogResult.Yes)
+                {
+                    score += 5;
+                    started.Start();
+                }
             }
             if (score == 91)
             {
-                score += 1;
-                student.Left = 246;
-                student.Top = 360;
-                MessageBox.Show("Поздравляем! Вы получили ПЯТЕРКУ автоматом! До новых встреч!)", "Конец игры");
+                DontMove();
+                MessageBox.Show("Поздравляем! Вы получили ПЯТЕРКУ автоматом! До новых встреч!)", "Конец игры");              
                 Gameover();
-            }
-
+            }     
 
             teacher2.Left += teacher2_speedx;
             if (teacher2.Bounds.IntersectsWith(walls1.Bounds) || teacher2.Bounds.IntersectsWith(walls2.Bounds))
                 teacher2_speedx = -teacher2_speedx;
-            teacher3.Left += teacher3_speedx;
+            teacher3.Left -= teacher3_speedx;
             if (teacher3.Bounds.IntersectsWith(walls3.Bounds) || teacher3.Bounds.IntersectsWith(walls4.Bounds))
                 teacher3_speedx = -teacher3_speedx;
+            teacher1.Left += teacher1_speedx;
+            if (teacher1.Bounds.IntersectsWith(walls7.Bounds) || teacher1.Bounds.IntersectsWith(walls11.Bounds))
+                teacher1_speedx = -teacher1_speedx;
         }
 
         public void DontMove()
         {
+            started.Stop();
             if (left == true)
                 left = false;
             if (right == true)
@@ -206,6 +219,7 @@ namespace Между_жизнью_и_смертью
             heart5.Visible = false;
             heart6.Visible = false;
 
+            teacher1.Visible = false;
             teacher2.Visible = false;
             teacher3.Visible = false;
 
@@ -213,7 +227,6 @@ namespace Между_жизнью_и_смертью
             score = 0;
 
             teacher1_speedx = 5;
-            teacher1_speedy = 5;
             teacher2_speedx = 5;
             teacher3_speedx = 5;
             student_speed = 6;
@@ -222,8 +235,8 @@ namespace Между_жизнью_и_смертью
 
             student.Left = 246;
             student.Top = 360;
-            teacher1.Left = 950;
-            teacher1.Top = 290;
+            teacher1.Left = 1000;
+            teacher1.Top = 285;
             teacher2.Left = 302;
             teacher2.Top = 580;
             teacher3.Left = 600;
