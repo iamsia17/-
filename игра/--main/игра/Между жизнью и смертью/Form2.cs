@@ -159,7 +159,6 @@ namespace Между_жизнью_и_смертью
 
         public void DontMove()
         {
-            started.Stop();
             if (left == true)
                 left = false;
             if (right == true)
@@ -176,13 +175,10 @@ namespace Между_жизнью_и_смертью
         {
             if (e.KeyCode == Keys.Left)
                 left = true;
-
             if (e.KeyCode == Keys.Right)
                 right = true;
-
             if (e.KeyCode == Keys.Up)
                 up = true;
-
             if (e.KeyCode == Keys.Down)
                 down = true;
         }
