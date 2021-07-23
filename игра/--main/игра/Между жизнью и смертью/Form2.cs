@@ -7,7 +7,7 @@ namespace Между_жизнью_и_смертью
     public partial class game : Form
     {
         Thread th;
-        bool up, down, right, left, game_over;
+        bool up, down, right, left;
         int score, student_speed, teacher1_speedx, teacher2_speedx, teacher3_speedx, count;
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -116,31 +116,23 @@ namespace Между_жизнью_и_смертью
             }
             if (score==61)
             {
+                score += 5;
                 DontMove();
                 DialogResult message1 = MessageBox.Show("Поздравляем! Вы получили ТРОЙКУ автоматом. \nЕсли продолжите - получите +5 баллов! \nХотите продолжить?)", "Внимание!", MessageBoxButtons.YesNo);
                 if (message1 == DialogResult.No)                
-                    Gameover();
-                if (message1 == DialogResult.Yes)
-                {
-                    score += 5;
-                    started.Start();
-                }
-                   
+                    Gameover();                  
             }
             if (score == 76)
             {
+                score += 5;
                 DontMove();
                 DialogResult message2 = MessageBox.Show("Поздравляем! Вы получили ЧЕТВЕРКУ автоматом. \nЕсли продолжите - получите +5 баллов! \nХотите продолжить?)", "Внимание!", MessageBoxButtons.YesNo);
                 if (message2 == DialogResult.No)
                     Gameover();
-                if (message2 == DialogResult.Yes)
-                {
-                    score += 5;
-                    started.Start();
-                }
             }
             if (score == 91)
             {
+                score += 5;
                 DontMove();
                 MessageBox.Show("Поздравляем! Вы получили ПЯТЕРКУ автоматом! До новых встреч!)", "Конец игры");              
                 Gameover();
@@ -227,8 +219,6 @@ namespace Между_жизнью_и_смертью
             teacher3_speedx = 5;
             student_speed = 6;
 
-            game_over = false;
-
             student.Left = 246;
             student.Top = 360;
             teacher1.Left = 1000;
@@ -242,7 +232,6 @@ namespace Между_жизнью_и_смертью
         }
         private void Gameover()
         {
-            game_over = true;
             started.Stop();
             Close(); 
             th = new Thread(Open);
